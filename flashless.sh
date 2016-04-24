@@ -19,6 +19,10 @@ else                                        #Throw error for non Deb systems
 fi
 
 if [ -e /usr/share/doc/libdvdread4/install-css.sh ]; then
-  echo "Installing DVD Reader"
+  echo "Installing DVD CSS Decoder"
   sudo /usr/share/doc/libdvdread4/install-css.sh
+else
+  echo "In order to install DVD CSS Decoder run: sudo apt-get install libdvd-pkg"
 fi
+echo "Flashless extras script complete"
+echo
