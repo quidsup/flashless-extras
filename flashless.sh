@@ -18,11 +18,13 @@ else                                        #Throw error for non Deb systems
   exit 1
 fi
 
+echo
 if [ -e /usr/share/doc/libdvdread4/install-css.sh ]; then
   echo "Installing DVD CSS Decoder"
   sudo /usr/share/doc/libdvdread4/install-css.sh
 else
   echo "In order to install DVD CSS Decoder run: sudo apt-get install libdvd-pkg"
 fi
+echo
 echo "Flashless extras script complete"
 echo
