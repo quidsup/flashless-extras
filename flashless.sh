@@ -8,7 +8,7 @@
 if [ "$(command -v apt)" ]; then       #Is this an Ubuntu / Debian based distro?
   #Ask user whether they want to install Microsoft fonts
   echo -n "Do you want to install Microsoft TrueType Fonts (y/n)? "
-  read -r Fonts  
+  read -rn1 Fonts  
   echo
   
   if [[ $(pgrep kwin) != "" ]]; then   #Different set of packages are needed for KDE based systems
