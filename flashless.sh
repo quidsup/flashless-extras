@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 #Title: Flashless Restricted Extras Installer for Ubuntu
 #Description: Installs patent encumbered audio and video codecs
 #Author: Quidsup
