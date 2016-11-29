@@ -30,7 +30,7 @@ if [ "$(command -v apt)" ]; then       #Is this an Ubuntu / Debian based distro?
   fi
   
 else                               #Throw error for non Deb systems
-  echo "Error: Flashless Extras is only written for Debian based systems"
+  echo "Error: Flashless Extras has only been written for Debian based systems"
   exit 1
 fi
 
@@ -44,5 +44,5 @@ else
 fi
 
 echo
-echo "Flashless extras script complete"
+echo "Flashless extras script complete :)"
 echo
