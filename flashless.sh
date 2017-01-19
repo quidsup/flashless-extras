@@ -29,7 +29,7 @@ if [ "$(command -v apt)" ]; then       #Is this an Ubuntu / Debian based distro?
     sudo apt install ttf-mscorefonts-installer
   fi
 
-elif [ "$(command -v pacman)" ];then
+elif [ "$(command -v pacman)" ];then    #Installing restricted extras for Arch based systems
   echo -n "Do you want to install Microsoft TrueType Fonts (y/n)?"
   read -rn1 Fonts
   echo
