@@ -17,16 +17,16 @@ if [ "$(command -v apt)" ]; then       #Is this an Ubuntu / Debian based distro?
   
   if [[ $(pgrep kwin) != "" ]]; then   #Different set of packages are needed for KDE based systems
     echo "Installing Restricted Extras for KDE based system"
-    sudo apt install lame unrar gstreamer1.0-fluendo-mp3 gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-fluendo-mp3 libdvdread4 libk3b6-extracodecs  oxideqt-codecs-extra libavcodec-extra libavcodec-ffmpeg-extra56 libk3b6-extracodecs
+    sudo apt install -y lame unrar gstreamer1.0-fluendo-mp3 gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-fluendo-mp3 libdvdread4 libk3b6-extracodecs  oxideqt-codecs-extra libavcodec-extra libavcodec-ffmpeg-extra56 libk3b6-extracodecs
   else
     echo "Installing Restricted Extras"
-    sudo apt install lame unrar gstreamer1.0-fluendo-mp3 gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-fluendo-mp3 libdvdread4 libk3b6-extracodecs  oxideqt-codecs-extra libavcodec-extra libavcodec-ffmpeg-extra56
+    sudo apt install -y lame unrar gstreamer1.0-fluendo-mp3 gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-fluendo-mp3 libdvdread4 libk3b6-extracodecs  oxideqt-codecs-extra libavcodec-extra libavcodec-ffmpeg-extra56
   fi
   
   #Optional install of Microsoft fonts
   if [[ $Fonts == "y" ]] || [[ $Fonts == "Y" ]]; then
     echo "Installing Microsoft Fonts"
-    sudo apt install ttf-mscorefonts-installer
+    sudo apt install -y ttf-mscorefonts-installer
   fi
 
 elif [ "$(command -v pacman)" ];then    #Installing restricted extras for Arch based systems
@@ -40,21 +40,21 @@ elif [ "$(command -v pacman)" ];then    #Installing restricted extras for Arch b
 
   if [[ $(pgrep kwin) != "" ]];then     #Different set of packages are needed for KDE based systems
      echo "Installing Restricted Extras for KDE based system"
-     sudo pacman -Sy lame unrar gstreamer gst-plugins-bad gst-plugins-ugly gst-libav libdvdread libdvdcss k3b ffmpeg ffmpeg2.8
+     sudo pacman --no-confirm -Sy lame unrar gstreamer gst-plugins-bad gst-plugins-ugly gst-libav libdvdread libdvdcss k3b ffmpeg ffmpeg2.8
      yaourt -Sy gst-fluendo-mp3
   else
      echo "Installing Restricted Extras"
-     sudo pacman -Sy lame unrar gstreamer gst-plugins-bad gst-plugins-ugly gst-libav libdvdread libdvdcss ffmpeg ffmpeg2.8
+     sudo pacman --no-confirm -Sy lame unrar gstreamer gst-plugins-bad gst-plugins-ugly gst-libav libdvdread libdvdcss ffmpeg ffmpeg2.8
      yaourt -Sy gst-fluendo-mp3
   fi
 
   #Optional install of Microsoft fonts
   if [[ $Fonts == "y" ]] || [[ $Fonts == "Y" ]];then
      echo "Installing Microsoft Fonts"
-     yaourt -Sy ttf-ms-fonts
+     yaourt --no-confirm -Sy ttf-ms-fonts
   fi
 else                               #Throw error for non Deb systems
-  echo "Error: Flashless Extras has only been written for Debian and Arch based systems"
+  echo "Sorry, the Flashless Extras script has only been written for Debian and Arch based systems."
   exit 1
 fi
 
