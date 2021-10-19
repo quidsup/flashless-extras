@@ -1,5 +1,7 @@
 # flashless-extras
-A script to install the "Restricted Extras" software package in Ubuntu without Adobe Flash
+## Deprecated
+Flash is not installed by Ubuntu Restricted Extras, therefore making this script redundant.  
+
 ## Usage
 Open up the Terminal on the desired system. Download and run the script using the following command:
 ```bash
